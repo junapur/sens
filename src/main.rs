@@ -1,4 +1,5 @@
 mod cli;
+mod math;
 
 use anyhow::Result;
 use clap::Parser;
