@@ -1,0 +1,10 @@
+[package]
+name = "sens"
+description = "https://github.com/junapur/sens"
+repository = "https://github.com/rust-lang/cargo"
+authors = ["June <junapur@proton.me>"]
+license = "MIT"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
