@@ -1,5 +1,8 @@
 mod cli;
+mod commands;
+mod games;
 mod math;
+mod parsers;
 
 use anyhow::Result;
 use clap::Parser;
