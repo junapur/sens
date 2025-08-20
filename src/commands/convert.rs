@@ -6,17 +6,17 @@ use clap::Args;
 
 #[derive(Args)]
 pub struct ConvertArgs {
+    /// Your in-game sensitivity
+    #[arg(value_parser = parse_positive_f64)]
+    sensitivity: f64,
+
     /// The game you're converting from
-    #[arg(short, long)]
+    #[arg()]
     from: String,
 
     /// The game you're converting from
-    #[arg(short, long)]
+    #[arg()]
     to: String,
-
-    /// Your in-game sensitivity
-    #[arg(short, long, alias = "sens", value_parser = parse_positive_f64)]
-    sensitivity: f64,
 }
 
 pub fn execute(args: ConvertArgs) -> Result<()> {

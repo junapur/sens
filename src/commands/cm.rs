@@ -7,15 +7,15 @@ use clap::{Args, value_parser};
 #[derive(Args)]
 pub struct CmArgs {
     /// The game you're converting from
-    #[arg(short, long)]
+    #[arg()]
     game: String,
 
     /// Your in-game sensitivity
-    #[arg(short, long, alias = "sens", value_parser = parse_positive_f64)]
+    #[arg(value_parser = parse_positive_f64)]
     sensitivity: f64,
 
     /// your DPI
-    #[arg(short, long, value_parser = value_parser!(u32).range(1..))]
+    #[arg(value_parser = value_parser!(u32).range(1..))]
     dpi: u32,
 }
 
