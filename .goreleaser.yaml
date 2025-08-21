@@ -31,6 +31,8 @@ archives:
       - goos: windows
         formats: [zip]
 
+    files: ["LICENSE*"]
+
 changelog:
   sort: asc
 
