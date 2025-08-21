@@ -1,4 +1,4 @@
-use crate::games::GAMES;
+use crate::games::{GAMES, Game};
 use anyhow::Result;
 use clap::Args;
 
@@ -10,11 +10,13 @@ pub struct ListArgs {
 }
 
 pub fn execute(args: ListArgs) -> Result<()> {
-    for game in GAMES {
+    let mut sorted_games: Vec<&Game> = GAMES.iter().collect();
+    sorted_games.sort_by_key(|game| game.title.to_lowercase());
+
+    for game in sorted_games {
+        println!("─ {}", game.title);
         if args.aliases && !game.aliases.is_empty() {
-            println!("{} ({})", game.title, game.aliases.join(", "));
-        } else {
-            println!("{}", game.title);
+            println!("  └─ Aliases: {} \n", game.aliases.join(", "));
         }
     }
 
