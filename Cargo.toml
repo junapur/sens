@@ -4,7 +4,7 @@ description = "Convert mouse sensitivity between games via CLI."
 repository = "https://github.com/junapur/sens"
 authors = ["June <junapur@proton.me>"]
 license = "MIT"
-version = "2.0.0"
+version = "2.1.0"
 edition = "2024"
 
 [dependencies]
