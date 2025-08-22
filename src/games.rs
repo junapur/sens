@@ -14,7 +14,7 @@ pub fn get_game(query: &str) -> Option<&'static Game> {
     })
 }
 
-pub const GAMES: [Game; 16] = [
+pub const GAMES: [Game; 18] = [
     Game {
         title: "Counter-Strike 2",
         aliases: &["cs", "cs2"],
@@ -94,5 +94,15 @@ pub const GAMES: [Game; 16] = [
         title: "Rainbow Six Siege X",
         aliases: &["r6", "r6s"],
         yaw: 0.00572957795,
+    },
+    Game {
+        title: "Titanfall 2",
+        aliases: &["titanfall"],
+        yaw: 0.022,
+    },
+    Game {
+        title: "Roblox Arsenal",
+        aliases: &["arsenal"],
+        yaw: 0.375,
     },
 ];
