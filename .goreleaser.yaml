@@ -18,14 +18,9 @@ builds:
       - aarch64-apple-darwin
 
 archives:
-  - formats: [tar.gz]
+  - formats: [tar.xz]
 
-    name_template: >-
-      {{ .ProjectName }}_
-      {{- title .Os }}_
-      {{- if eq .Arch "amd64" }}x86_64
-      {{- else if eq .Arch "386" }}i386
-      {{- else }}{{ .Arch }}{{ end }}
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
 
     format_overrides:
       - goos: windows
@@ -41,9 +36,26 @@ changelog:
       - "^docs:"
       - "^test:"
 
-release:
-  footer: >-
+winget:
+  - name: sens
+    publisher: junapur
+    license: MIT
+    homepage: https://github.com/junapur/sens
+    short_description: Convert mouse sensitivity between games via CLI.
 
-    ---
+    tags:
+      - rust
+      - cli
 
-    Released by [GoReleaser](https://github.com/goreleaser/goreleaser).
+    repository:
+      owner: junapur
+      name: winget-pkgs
+      branch: "{{ .ProjectName }}-{{.Version}}"
+
+      pull_request:
+        enabled: true
+        draft: true
+        base:
+          owner: microsoft
+          name: winget-pkgs
+          branch: master
