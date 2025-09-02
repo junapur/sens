@@ -1,6 +1,6 @@
 # sens
 [![CI](https://github.com/junapur/sens/actions/workflows/ci.yml/badge.svg)](https://github.com/junapur/sens/actions/workflows/ci.yml)
 
-Convert mouse sensitivity between games via CLI.
+**A sensitivity conversion tool for terminal nerds.**
 
 ![Example](./assets/sens.gif)

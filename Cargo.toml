@@ -1,6 +1,6 @@
 [package]
 name = "sens"
-description = "Convert mouse sensitivity between games via CLI."
+description = "A sensitivity conversion tool for terminal nerds."
 repository = "https://github.com/junapur/sens"
 authors = ["June <junapur@proton.me>"]
 license = "MIT"
