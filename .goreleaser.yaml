@@ -41,7 +41,7 @@ winget:
     publisher: junapur
     license: MIT
     homepage: https://github.com/junapur/sens
-    short_description: Convert mouse sensitivity between games via CLI.
+    short_description: A sensitivity conversion tool for terminal nerds.
 
     tags:
       - rust
