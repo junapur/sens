@@ -1,5 +1,5 @@
-pub fn get_cm_360(sensitvity: f64, dpi: u32, yaw: f64) -> f64 {
-    (360.0 / (sensitvity * dpi as f64 * yaw)) * 2.54
+pub fn get_cm_360(sensitivity: f64, dpi: u32, yaw: f64) -> f64 {
+    (360.0 / (sensitivity * dpi as f64 * yaw)) * 2.54
 }
 
 pub fn convert_sensitivity(
