@@ -1,7 +1,7 @@
 use crate::games::get_game;
-use crate::math::{convert_sensitivity, convert_sensitivity_dpi};
+use crate::math::convert_sensitivity;
 use crate::parsers::parse_positive_f64;
-use anyhow::{Result, anyhow};
+use anyhow::{Context, Result};
 use clap::{Args, value_parser};
 
 #[derive(Args)]
@@ -28,24 +28,21 @@ pub struct ConvertArgs {
 }
 
 pub fn execute(args: ConvertArgs) -> Result<()> {
-    let from_game = get_game(&args.from_game)
-        .ok_or_else(|| anyhow!("Source game '{}' not found", &args.from_game))?;
+    let from_game =
+        get_game(&args.from_game).context(format!("source game '{}' not found", args.from_game))?;
 
-    let to_game = get_game(&args.to_game)
-        .ok_or_else(|| anyhow!("Target game '{}' not found", &args.to_game))?;
+    let to_game =
+        get_game(&args.to_game).context(format!("target game '{}' not found", args.to_game))?;
 
-    let converted_sensitivity = match (args.from_dpi, args.to_dpi) {
-        (Some(from_dpi), Some(to_dpi)) => convert_sensitivity_dpi(
-            args.sensitivity,
-            from_game.yaw,
-            to_game.yaw,
-            from_dpi,
-            to_dpi,
-        ),
-        _ => convert_sensitivity(args.sensitivity, from_game.yaw, to_game.yaw),
-    };
+    let sensitivity = convert_sensitivity(
+        args.sensitivity,
+        from_game.yaw,
+        to_game.yaw,
+        args.from_dpi,
+        args.to_dpi,
+    );
 
-    println!("{:.3}", converted_sensitivity);
+    println!("{:.3}", sensitivity);
 
     Ok(())
 }
