@@ -27,7 +27,7 @@ pub struct ConvertArgs {
     to_dpi: Option<u32>,
 }
 
-pub fn execute(args: ConvertArgs) -> Result<()> {
+pub fn run(args: ConvertArgs) -> Result<()> {
     let from_game =
         get_game(&args.from_game).context(format!("source game '{}' not found", args.from_game))?;
 
@@ -43,6 +43,5 @@ pub fn execute(args: ConvertArgs) -> Result<()> {
     );
 
     println!("{:.3}", sensitivity);
-
     Ok(())
 }

@@ -24,9 +24,9 @@ enum Command {
 impl Cli {
     pub fn run(self) -> Result<()> {
         match self.command {
-            Command::List(args) => list::execute(args),
-            Command::Cm(args) => cm::execute(args),
-            Command::Convert(args) => convert::execute(args),
+            Command::List(args) => list::run(args),
+            Command::Cm(args) => cm::run(args),
+            Command::Convert(args) => convert::run(args),
         }
     }
 }

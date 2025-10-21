@@ -9,7 +9,7 @@ pub struct ListArgs {
     aliases: bool,
 }
 
-pub fn execute(args: ListArgs) -> Result<()> {
+pub fn run(args: ListArgs) -> Result<()> {
     let mut sorted_games: Vec<&Game> = GAMES.iter().collect();
     sorted_games.sort_by_key(|game| game.title.to_lowercase());
 

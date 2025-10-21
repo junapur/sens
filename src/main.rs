@@ -10,5 +10,7 @@ use cli::Cli;
 
 fn main() -> Result<()> {
     let cli = Cli::parse();
-    cli.run()
+    cli.run()?;
+
+    Ok(())
 }
