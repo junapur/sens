@@ -4,7 +4,7 @@ description = "A sensitivity conversion tool for terminal nerds."
 repository = "https://github.com/junapur/sens"
 authors = ["June <junapur@proton.me>"]
 license = "MIT"
-version = "2.2.0"
+version = "2.3.0"
 edition = "2024"
 
 [dependencies]
